@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "Mode.h"
+#include "StateManager.h"
 
 class TeamQuiz {
     public:
@@ -20,9 +20,10 @@ class TeamQuiz {
         int player_four_input = LOW;
         const int exit_init_mode_input_pin = 10;
         int exit_init_mode_input = LOW;
-        Mode mode = Mode::INIT;
         int winner = 0;
 
         void _init_quiz();
         void _start_quiz();
+
+        StateManager * stateMgr;
 };
